@@ -5,12 +5,14 @@
 
 // I AM NOT DONE
 
-struct Wrapper {
-    value: u32,
+use std::any::Any;
+
+struct Wrapper<T> {
+    value: T,
 }
 
-impl Wrapper {
-    pub fn new(value: u32) -> Self {
+impl<T> Wrapper<T> {
+    pub fn new(value: T) -> Self {
         Wrapper { value }
     }
 }
